@@ -1,6 +1,6 @@
 import React from "react";
 
-const OtherInformation = () => {
+const OtherInformation = ({ nextStep, handleChange, values }) => {
     return (
         <>
         </>
