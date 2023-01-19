@@ -1,6 +1,17 @@
 import React from "react";
 
-const OtherInformation = ({ nextStep, handleChange, values }) => {
+const OtherInformation = ({ previousStep, nextStep, handleChange, values }) => {
+    
+    const Continue = e => {
+        e.preventDefault();
+        nextStep();
+    }
+
+    const Previous = e => {
+        e.preventDefault();
+        previousStep();
+    } 
+    
     return (
         <>
         <form>
@@ -28,6 +39,8 @@ const OtherInformation = ({ nextStep, handleChange, values }) => {
                 onChange={handleChange('age')}
                 />
             </label>
+            <button onClick={ Previous }>Previous</button> 
+            <button onClick={ Continue }>Next</button>
         </form>
         </>
     )

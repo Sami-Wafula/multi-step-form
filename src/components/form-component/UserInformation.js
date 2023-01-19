@@ -1,6 +1,11 @@
 import React from "react";
 
 const UserInformation = ({ nextStep, handleChange, values }) => {
+
+    const Continue = e => {
+        e.preventDefault();
+        nextStep();
+    }
     return (
         <>
         <form>
@@ -28,6 +33,7 @@ const UserInformation = ({ nextStep, handleChange, values }) => {
                 onChange={handleChange('password')}
                 />
             </label>
+            <button onClick={ Continue }>Next</button>
         </form>
         </>
     )
