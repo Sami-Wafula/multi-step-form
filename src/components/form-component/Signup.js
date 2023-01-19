@@ -2,16 +2,6 @@ import React, { Component } from "react";
 
 export default class Signup extends Component {
 
-    state = {
-        step: 1,
-        username: '',
-        email: '',
-        password: '',
-        country: '',
-        sex: '',
-        age: ''
-    }
-
     previousStep = () => {
         const { step } = this.state;
         this.setState({ step: step - 1 });
@@ -27,6 +17,12 @@ export default class Signup extends Component {
     }
 
     render() {
+        const { step } = this.state;
+    
+        const { username, email, password, country, sex, age } = this.state;
+
+        const values = { username, email, password, country, sex, age }
+        
         return (
             <div>
                 <h1>Welcome, please provide some information to get started</h1>
