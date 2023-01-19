@@ -7,12 +7,12 @@ import Success from './Success';
 export default class Signup extends Component {
 
     previousStep = () => {
-        const { step } = this.state;
+        const { step } = this.state.step;
         this.setState({ step: step - 1 });
     }
 
     nextStep = () => {
-        const { step } = this.state;
+        const { step } = this.state.step;
         this.setState({ step: step + 1});
     }
 
@@ -21,7 +21,7 @@ export default class Signup extends Component {
     }
 
     render() {
-        const { step } = this.state;
+        const { step } = this.state.step;
         const { username, email, password, country, sex, age } = this.state;
         const values = { username, email, password, country, sex, age }
 
